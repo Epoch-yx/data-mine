@@ -56,5 +56,14 @@ function mockXHR() {
 
 module.exports = {
   mocks,
-  mockXHR
+  mockXHR,
+  proxyTable: {
+    '/api': {
+      target: 'http://localhost:5000',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': 'http://localhost:5000'
+      }
+    }
+  }
 }
