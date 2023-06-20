@@ -4,6 +4,7 @@
       <el-input v-model="minSupport" style="width:200px; margin-left: 5px;" placeholder="请输入最小支持度" prop="minSupport" />
       <el-input v-model="minConfidence" style="width:200px; margin-left: 5px;" placeholder="请输入最小置信度" prop="minConfidence" />
       <el-button type="primary" style="margin-left: 5px;" @click="recive">获取数据</el-button>
+
     </div>
     <div :id="id" :class="className" :style="{height: '500px', width:'800px'}" />
   </div>
