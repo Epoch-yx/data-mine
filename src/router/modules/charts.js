@@ -13,10 +13,10 @@ const chartsRouter = {
   },
   children: [
     {
-      path: 'keyboard',
-      component: () => import('@/views/charts/keyboard'),
-      name: 'KeyboardChart',
-      meta: { title: 'Keyboard Chart', noCache: true }
+      path: 'HeatMap',
+      component: () => import('@/views/charts/HeatMap'),
+      name: 'HeatMap',
+      meta: { title: 'HeatMap', noCache: true }
     },
     {
       path: 'line',
