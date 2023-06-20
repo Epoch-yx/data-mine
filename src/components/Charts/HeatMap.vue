@@ -3,7 +3,8 @@
     <div>
       <el-input v-model="minSupport" style="width:200px; margin-left: 5px;" placeholder="请输入最小支持度" prop="minSupport" />
       <el-input v-model="minConfidence" style="width:200px; margin-left: 5px;" placeholder="请输入最小置信度" prop="minConfidence" />
-      <el-button type="primary" style="margin-left: 5px;" @click="inputvar">获取数据</el-button>
+      <el-button type="primary" style="margin-left: 5px;" @click="recive">获取数据</el-button>
+
     </div>
     <div :id="id" :class="className" :style="{height: '500px', width:'800px'}" />
   </div>
@@ -12,6 +13,7 @@
 <script>
 import echarts from 'echarts'
 import resize from './mixins/resize'
+import axios from 'axios'
 
 export default {
   mixins: [resize],
@@ -34,9 +36,13 @@ export default {
   data() {
     return {
       chart: null,
-      minSupport: this.minSupport,
-      minConfidence: this.minConfidence
-
+      minSupport: null,
+      minConfidence: null,
+      form: {
+        min_support: this.minSupport,
+        min_confidence: this.minConfidence
+      },
+      aprioriTable: []
     }
   },
   mounted() {
@@ -129,6 +135,23 @@ export default {
       const parentHeight = chartContainer.offsetHeight
       this.chart.resize({ width: parentWidth, height: parentHeight
       })
+    },
+    recive() {
+      console.log(this.minSupport, +'   ' + this.minConfidence)
+      const url = 'http://10.120.129.155:5000/aprior'
+      const dict = {
+        'minSupport': 0.6,
+        'minConfidence': 0.3
+      }
+      // bug post cors error 不通
+      axios.post(url, dict).then(res => {
+        console.log(res.data)
+        this.aprioriTable = res.data
+      })
+      // axios.get('http://10.120.129.155:5000/classify').then(res => {
+      //   console.log(res.data)
+      //   this.aprioriTable = res.data
+      // })
     }
   }
 }
