@@ -39,8 +39,8 @@ export default {
       minSupport: null,
       minConfidence: null,
       form: {
-        min_support: this.minSupport,
-        min_confidence: this.minConfidence
+        min_support: Number(this.minSupport),
+        min_confidence: Number(this.minConfidence)
       },
       aprioriTable: []
     }
@@ -137,18 +137,29 @@ export default {
       })
     },
     recive() {
-      console.log(this.minSupport, +'   ' + this.minConfidence)
-      const url = 'http://10.120.129.155:5000/aprior'
+      const url = 'http://192.168.1.102:5000/aprior'
+      console.log(`${this.minSupport} ${this.minConfidence}`)
       const dict = {
-        'minSupport': 0.6,
-        'minConfidence': 0.3
+        'min_support': Number(this.minSupport),
+        'min_confidence': Number(this.minConfidence)
       }
+      // const dict = {
+      //   "min_support": 0.6,
+      //   "min_confidence": 0.3
+      // }
+      const config = {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: dict
+      }
+
       // bug post cors error 不通
-      axios.post(url, dict).then(res => {
+      axios.post(url, null, config).then(res => {
         console.log(res.data)
         this.aprioriTable = res.data
       })
-      // axios.get('http://10.120.129.155:5000/classify').then(res => {
+      // axios.get('http://http://192.168.1.102:5000:5000/classify').then(res => {
       //   console.log(res.data)
       //   this.aprioriTable = res.data
       // })
