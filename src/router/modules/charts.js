@@ -12,23 +12,47 @@ const chartsRouter = {
     icon: 'chart'
   },
   children: [
+    // {
+    //   path: 'keyboard',
+    //   component: () => import('@/views/charts/keyboard'),
+    //   name: 'KeyboardChart',
+    //   meta: { title: 'Keyboard Chart', noCache: true }
+    // },
+    // {
+    //   path: 'line',
+    //   component: () => import('@/views/charts/line'),
+    //   name: 'LineChart',
+    //   meta: { title: 'Line Chart', noCache: true }
+    // },
+    // {
+    //   path: 'mix-chart',
+    //   component: () => import('@/views/charts/mix-chart'),
+    //   name: 'MixChart',
+    //   meta: { title: 'Mix Chart', noCache: true }
+    // }
     {
-      path: 'keyboard',
-      component: () => import('@/views/charts/keyboard'),
-      name: 'KeyboardChart',
-      meta: { title: 'Keyboard Chart', noCache: true }
+      path: 'Clustering',
+      component: () => import('@/views/charts/Clustering'),
+      name: 'ClusteringChart',
+      meta: { title: 'Clustering Chart', noCache: true }
     },
     {
-      path: 'line',
-      component: () => import('@/views/charts/line'),
-      name: 'LineChart',
-      meta: { title: 'Line Chart', noCache: true }
+      path: 'Regression',
+      component: () => import('@/views/charts/Regression'),
+      name: 'RegressionChart',
+      meta: { title: 'Regression Chart', noCache: true }
     },
     {
-      path: 'mix-chart',
-      component: () => import('@/views/charts/mix-chart'),
-      name: 'MixChart',
-      meta: { title: 'Mix Chart', noCache: true }
+      path: 'Classification',
+      component: () => import('@/views/charts/Classification'),
+      name: 'ClassificationChart',
+      meta: { title: 'Classification Chart', noCache: true }
+    },
+    {
+      path: 'Association',
+      component: () => import('@/views/charts/Association'),
+      name: 'AssociationChart',
+      meta: { title: 'Association Chart', noCache: true }
     }
   ]
 }

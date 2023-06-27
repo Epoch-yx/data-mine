@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import Chart from '@/components/Charts/MixChart'
+import Chart from '@/components/Charts/AssociationRule(1)'
 
 export default {
-  name: 'MixChart',
+  name: 'AssociationChart',
   components: { Chart }
 }
 </script>
@@ -18,6 +18,7 @@ export default {
   position: relative;
   width: 100%;
   height: calc(100vh - 84px);
+  overflow: auto;
 }
 </style>
 

@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import Chart from '@/components/Charts/LineMarker'
+import Chart from '@/components/Charts/Clustering_hyx'
 
 export default {
-  name: 'LineChart',
+  name: 'ClusteringChart',
   components: { Chart }
 }
 </script>
@@ -18,6 +18,7 @@ export default {
   position: relative;
   width: 100%;
   height: calc(100vh - 84px);
+  overflow: auto;
 }
 </style>
 
