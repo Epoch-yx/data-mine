@@ -52,54 +52,12 @@
 <script>
 import MarkdownEditor from '@/components/MarkdownEditor'
 
-const content12 = `
-**1. 分类接口**
+const content = `
+**This is test**
 
-- **Endpoint:** 
-- **方法:** POST
-- **参数:** 无
-- **请求体:**
-json
-{
-  "height": <数值>,
-  "leaf_samples": <数值>
-}
-- **响应体:**
-json
-{
-  "decision_tree": <Base64编码的字符串>,
-  "result_img": <Base64编码的字符串>,
-  "result": <预测结果列表>
-}
-
-`
-const content13 = `
-**2. 获取鸢尾花数据接口**
-
-- **Endpoint:** ``
-- **方法:** GET
-- **参数:** 无
-- **请求体:** 无
-- **响应体:**
-
-
-`
-const content14 = `
-**1. 分类接口**
-
-- **Endpoint:** 
-- **方法:** POST
-- **参数:** 无
-- **请求体:**
-
-`
-const content15 = `
-**1. 分类接口**
-
-- **Endpoint:** 
-- **方法:** POST
-- **参数:** 无
-- **请求体:**
+* vue
+* element
+* webpack
 
 `
 export default {
@@ -107,10 +65,10 @@ export default {
   components: { MarkdownEditor },
   data() {
     return {
-      content1: content12,
-      content2: content13,
-      content3: content14,
-      content4: content15,
+      content1: content,
+      content2: content,
+      content3: content,
+      content4: content,
       html: '',
       languageTypeList: {
         'en': 'en_US',
